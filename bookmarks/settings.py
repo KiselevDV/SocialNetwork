@@ -114,6 +114,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Базовый URL для формирования адресов файлов
+MEDIA_URL = '/media/'
+# Путь в файловой ситеме к данным файлам
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # Адреса куда будет перенаправлен пользователь после при
 # успешной ваторизации, для входа в систему и выхода из неё
 LOGIN_REDIRECT_URL = 'dashboard'

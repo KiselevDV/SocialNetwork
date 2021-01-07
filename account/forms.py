@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 
+from .models import Profile
+
 
 class LoginForm(forms.Form):
     """Форма авторизации"""
@@ -23,3 +25,17 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
+
+
+class UserEditForm(forms.ModelForm):
+    """Редактирование встроенной модели"""
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+
+
+class ProfileEditForm(forms.ModelForm):
+    """Редактирование кастомной модели"""
+    class Meta:
+        model = Profile
+        fields = ('date_of_birth', 'photo')

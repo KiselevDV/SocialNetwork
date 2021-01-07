@@ -25,4 +25,6 @@ urlpatterns = [
          name='password_reset_complete'),
     # Регистрация пользователя
     path('register/', views.register, name='register'),
+    # Редактирование профиля пользователя
+    path('edit/', views.edit, name='edit')
 ]
