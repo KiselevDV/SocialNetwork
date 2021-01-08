@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.messages',  # система сообщений
     'django.contrib.staticfiles',
 ]
 
@@ -44,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',  # настройки сообщений
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -60,6 +60,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                # добавляет переменую 'message' в контекст шаблонов
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -127,3 +128,14 @@ LOGOUT_URL = 'logout'
 
 # Для отправки e-mail
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Список бэкэндов аутентификации проекта
+AUTHENTICATION_BACKENDS = [
+    # Бэкэнд по умолчанию использует логин и пароль, находится в (django.contrib.auth)
+    'django.contrib.auth.backends.ModelBackend',
+    # Кастомный бэкэнд (по e-mail вместо логина)
+    'account.authentication.EmailAuthBackend',
+    # 'social_core.backends.facebook.FacebookOAuth2',
+    # 'social_core.backends.twitter.TwitterOAuth',
+    # 'social_core.backends.google.GoogleOAuth2',
+]
