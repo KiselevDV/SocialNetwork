@@ -21,6 +21,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
+    # аутентификация через соц сети
+    path('social-auth/', include('social_django.urls', namespace='social')),
 ]
 
 # Сервер Django будет возвращать медиафайлы при обращении к ним по url-у

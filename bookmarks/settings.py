@@ -24,7 +24,8 @@ SECRET_KEY = 'kt=wrly^33x&of$2e8++gg7zt$0xdrrg72di3k1u&ias3g3e^_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Список используемых доменов
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -36,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',  # система сообщений
     'django.contrib.staticfiles',
+
+    'social_django',  # аутентификация через соц сети
 ]
 
 MIDDLEWARE = [
@@ -135,7 +138,20 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     # Кастомный бэкэнд (по e-mail вместо логина)
     'account.authentication.EmailAuthBackend',
-    # 'social_core.backends.facebook.FacebookOAuth2',
+    # Аутентификация через соц сети
+    'social_core.backends.facebook.FacebookOAuth2',
     # 'social_core.backends.twitter.TwitterOAuth',
     # 'social_core.backends.google.GoogleOAuth2',
 ]
+
+# Настройки авторизации через соц сети
+SOCIAL_AUTH_FACEBOOK_KEY = ''  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = ''  # Facebook App Secret
+# Какие данные будем запрашивать из аккаута
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+# SOCIAL_AUTH_TWITTER_KEY = ''  # Twitter Consumer Key
+# SOCIAL_AUTH_TWITTER_SECRET = ''  # Twitter Consumer Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''  # Google Consumer Secret
