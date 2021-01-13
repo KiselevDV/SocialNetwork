@@ -17,7 +17,7 @@ class Image(models.Model):
     # db_index - создать индекс по этому полю
     created = models.DateField('Дата создания', auto_now_add=True)
     # Ссылка на оригинальную картинку
-    url = models.URLField('ССылка на оригинальную картинку')
+    url = models.URLField('Ссылка на оригинальную картинку')
     slug = models.SlugField(max_length=200, unique=True, blank=True)
 
     def __str__(self):

@@ -23,6 +23,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     # аутентификация через соц сети
     path('social-auth/', include('social_django.urls', namespace='social')),
+    path('images/', include('images.urls', namespace='images')),
 ]
 
 # Сервер Django будет возвращать медиафайлы при обращении к ним по url-у
