@@ -30,7 +30,8 @@ ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
+    'account.apps.AccountConfig',  # создание соц. сети
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'social_django',  # аутентификация через соц сети
+    'images.apps.ImagesConfig',  # сохранение изображений в закладках на сайте
 ]
 
 MIDDLEWARE = [
