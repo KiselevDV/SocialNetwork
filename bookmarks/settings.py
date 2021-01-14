@@ -25,7 +25,12 @@ SECRET_KEY = 'kt=wrly^33x&of$2e8++gg7zt$0xdrrg72di3k1u&ias3g3e^_'
 DEBUG = True
 
 # Список используемых доменов
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'mysite.com',
+    'localhost',
+    '127.0.0.1',
+    '5953b4008876.ngrok.io',
+]
 
 # Application definition
 
