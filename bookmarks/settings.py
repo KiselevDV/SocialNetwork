@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'social_django',  # аутентификация через соц сети
     'images.apps.ImagesConfig',  # сохранение изображений в закладках на сайте
+    'sorl.thumbnail',  # добавление превью для изображений
 ]
 
 MIDDLEWARE = [
